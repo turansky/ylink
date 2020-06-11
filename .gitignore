@@ -1,0 +1,4 @@
+# IDEA ignore list
+.idea/*
+!.idea/icon.png
+*.iml

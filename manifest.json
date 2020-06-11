@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "yLink",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.yworks.com/products/yfiles-for-html/release-notes",
+        "https://www.yworks.com/products/yfiles-for-html/changelog"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
