@@ -14,25 +14,11 @@ for (let i = 0; i < codeElementCount; i++) {
 
 function getClassId (text) {
   const firstChar = text.charAt(0)
-  if (firstChar !== firstChar.toUpperCase()) {
-    return undefined
-  }
-
-  if (text === text.toUpperCase()) {
-    return undefined
-  }
-
-  if (text === text.toLowerCase()) {
-    return undefined
-  }
-
-  if (text === 'NaN' || text === 'RequireJS') {
-    return undefined
-  }
-
-  if (text.indexOf('SVG') === 0) {
-    return undefined
-  }
+  if (firstChar !== firstChar.toUpperCase()) return undefined
+  if (text === text.toUpperCase()) return undefined
+  if (text === text.toLowerCase()) return undefined
+  if (text === 'NaN' || text === 'RequireJS') return undefined
+  if (text.indexOf('SVG') === 0) return undefined
 
   return text.split('.')[0]
 }
