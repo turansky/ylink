@@ -3,13 +3,18 @@ const codeElementCount = codeElements.length
 
 for (let i = 0; i < codeElementCount; i++) {
   const element = codeElements[i]
+  const content = element.textContent
   const classId = getClassId(element.textContent)
   if (!classId) {
     continue
   }
 
-  element.style.cursor = 'pointer'
-  element.addEventListener('click', () => openDoc(classId))
+  element.textContent = ''
+
+  const a = document.createElement('a')
+  a.href = `https://docs.yworks.com/yfileshtml/#/api/${classId}`
+  a.textContent = content
+  element.append(a)
 }
 
 function getClassId (text) {
@@ -21,8 +26,4 @@ function getClassId (text) {
   if (text.indexOf('SVG') === 0) return undefined
 
   return text.split('.')[0]
-}
-
-function openDoc (classId) {
-  window.open(`https://docs.yworks.com/yfileshtml/#/api/${classId}`, '_blank')
 }
