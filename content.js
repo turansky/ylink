@@ -4,13 +4,14 @@ const codeElementCount = codeElements.length
 for (let i = 0; i < codeElementCount; i++) {
   const element = codeElements[i]
   const content = element.textContent
-  const id = getId(element.textContent)
-  if (!id) {
+  const ids = getIds(element.textContent)
+  if (!ids) {
     continue
   }
 
   element.textContent = ''
 
+  const id = ids[0]
   const href = isClassId(id)
     ? `https://docs.yworks.com/yfileshtml/#/api/${id}`
     : `https://docs.yworks.com/yfileshtml/#/search/${id}`
@@ -21,11 +22,13 @@ for (let i = 0; i < codeElementCount; i++) {
   element.append(a)
 }
 
-function getId (text) {
+function getIds (text) {
   if (text === 'NaN' || text === 'RequireJS') return undefined
   if (text.indexOf('SVG') === 0) return undefined
 
-  return text.split('.')[0]
+  const ids = text.split('.')
+  if (ids.length > 2) return undefined
+  return ids
 }
 
 function isClassId (id) {
