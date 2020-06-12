@@ -3,7 +3,6 @@ const codeElementCount = codeElements.length
 
 for (let i = 0; i < codeElementCount; i++) {
   const element = codeElements[i]
-  const content = element.textContent
   const ids = getIds(element.textContent)
   if (!ids) {
     continue
@@ -11,15 +10,15 @@ for (let i = 0; i < codeElementCount; i++) {
 
   element.textContent = ''
 
-  const id = ids[0]
-  const href = isClassId(id)
-    ? `https://docs.yworks.com/yfileshtml/#/api/${id}`
-    : `https://docs.yworks.com/yfileshtml/#/search/${id}`
+  const [id, memberId] = ids
+  element.append(createAnchor(id, true))
 
-  const a = document.createElement('a')
-  a.href = href
-  a.textContent = content
-  element.append(a)
+  if (!memberId) {
+    continue
+  }
+
+  element.append('.')
+  element.append(createAnchor(memberId, false))
 }
 
 function getIds (text) {
@@ -35,4 +34,15 @@ function isClassId (id) {
   const firstChar = id.charAt(0)
   return firstChar === firstChar.toUpperCase() &&
     id !== id.toUpperCase()
+}
+
+function createAnchor (id, checkClassMode) {
+  const href = checkClassMode && isClassId(id)
+    ? `https://docs.yworks.com/yfileshtml/#/api/${id}`
+    : `https://docs.yworks.com/yfileshtml/#/search/${id}`
+
+  const a = document.createElement('a')
+  a.href = href
+  a.textContent = id
+  return a
 }
