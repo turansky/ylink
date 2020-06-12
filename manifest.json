@@ -1,7 +1,7 @@
 {
   "name": "yLink",
   "description": "Documentation links in yFiles release notes and changelog",
-  "version": "0.2",
+  "version": "0.3",
   "content_scripts": [
     {
       "matches": [
