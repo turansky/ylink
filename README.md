@@ -13,7 +13,7 @@ No documentation links for yFiles classes on following pages:
 5. PROFIT
 
 ## Before
-![Before](before.png)
+![Before](screenshot/before.png)
 
 ## After
-![After](after.png)
+![After](screenshot/after.png)
