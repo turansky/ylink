@@ -1,3 +1,12 @@
+const IGNORED_IDS = [
+  'null',
+  'false',
+  'true',
+  'NaN',
+  'rtl',
+  'RequireJS'
+]
+
 const codeElements = document.getElementsByTagName('code')
 const codeElementCount = codeElements.length
 
@@ -22,7 +31,11 @@ for (let i = 0; i < codeElementCount; i++) {
 }
 
 function getIds (text) {
-  if (text === 'NaN' || text === 'RequireJS') return undefined
+  if (IGNORED_IDS.includes(text)) return undefined
+  if (text.includes(' ')) return undefined
+  if (text.includes('$')) return undefined
+  if (text.includes('-')) return undefined
+  if (text.includes('<')) return undefined
   if (text.indexOf('SVG') === 0) return undefined
 
   const ids = text.split('.')
