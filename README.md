@@ -12,5 +12,8 @@ No documentation links for yFiles classes on following pages:
 4. Select the extension’s directory
 5. PROFIT
 
-## Example
-![Example](example.png)
+## Before
+![Before](before.png)
+
+## After
+![After](after.png)
