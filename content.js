@@ -7,6 +7,10 @@ const IGNORED_IDS = [
   'RequireJS'
 ]
 
+const NON_ID_SYMBOLS = [
+  ' ', '$', '-', '<'
+]
+
 const codeElements = document.getElementsByTagName('code')
 const codeElementCount = codeElements.length
 
@@ -32,10 +36,7 @@ for (let i = 0; i < codeElementCount; i++) {
 
 function getIds (text) {
   if (IGNORED_IDS.includes(text)) return undefined
-  if (text.includes(' ')) return undefined
-  if (text.includes('$')) return undefined
-  if (text.includes('-')) return undefined
-  if (text.includes('<')) return undefined
+  if (NON_ID_SYMBOLS.some(symbol => text.includes(symbol))) return undefined
   if (text.indexOf('SVG') === 0) return undefined
 
   const ids = text.split('.')
