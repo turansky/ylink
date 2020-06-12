@@ -2,3 +2,5 @@
 .idea/*
 !.idea/icon.png
 *.iml
+
+*.zip
