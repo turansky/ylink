@@ -19,5 +19,12 @@
     "48": "icon/extension/48.png",
     "128": "icon/extension/128.png"
   },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon/extension/16.png",
+      "32": "icon/extension/32.png"
+    },
+    "default_title": "yLink"
+  },
   "manifest_version": 2
 }
