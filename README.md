@@ -1,3 +1,4 @@
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jhefadlgdfbiknjinmjlmniaikconhad)](https://chrome.google.com/webstore/detail/jhefadlgdfbiknjinmjlmniaikconhad)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/users/jhefadlgdfbiknjinmjlmniaikconhad)](https://chrome.google.com/webstore/detail/jhefadlgdfbiknjinmjlmniaikconhad)
 
 # yLink
