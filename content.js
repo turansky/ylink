@@ -12,10 +12,8 @@ const NON_ID_SYMBOLS = [
 ]
 
 const codeElements = document.getElementsByTagName('code')
-const codeElementCount = codeElements.length
 
-for (let i = 0; i < codeElementCount; i++) {
-  const element = codeElements[i]
+for (let element of codeElements) {
   const ids = getIds(element.textContent)
   if (!ids) {
     continue
