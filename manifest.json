@@ -6,7 +6,8 @@
     {
       "matches": [
         "https://www.yworks.com/products/yfiles-for-html/release-notes",
-        "https://www.yworks.com/products/yfiles-for-html/changelog"
+        "https://www.yworks.com/products/yfiles-for-html/changelog",
+        "https://www.yworks.com/products/yfiles-for-html/version-*"
       ],
       "js": [
         "content.js"
